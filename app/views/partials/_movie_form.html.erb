@@ -1,0 +1,24 @@
+<%= form_for @movie do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :format %>
+  <%= f.select :format, ['VHS','DVD','Streaming']%>
+  <%= f.label :length %>
+  <%= f.text_field :length %>
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+  <%= f.label :rating , 'Rating' %>
+  <%= f.hidden_field :rating, value: 'null' %>
+  <%= f.radio_button :rating, '1' %>
+  <%= label :rating_1, '1' %>
+  <%= f.radio_button :rating, '2' %>
+  <%= label :rating_2, '2' %>
+  <%= f.radio_button :rating, '3' %>
+  <%= label :rating_3, '3' %>
+  <%= f.radio_button :rating, '4' %>
+  <%= label :rating_4, '4' %>
+  <%= f.radio_button :rating, '5' %>
+  <%= label :rating_5, '5' %>
+
+  <%= f.submit "Save" %>
+<% end %>

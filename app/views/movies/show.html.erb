@@ -1,0 +1,8 @@
+<h1><%= @movie.title %></h1>
+<p>Format: <%= @movie.format %></p>
+<p>Length: <%= format("%2d hr %02d min", @movie.length/60, @movie.length % 60 ) %></p>
+<p>Year: <%= @movie.year %></p>
+<p>Rating: <%= @movie.rating %></p>
+
+
+<p><%= link_to "Edit Movie", edit_movie_path %></p>
