@@ -1,2 +1,6 @@
-<h1>Collections#edit</h1>
-<p>Find me in app/views/collections/edit.html.erb</p>
+<%= form_for @collection do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.submit "Save" %>
+<% end %>
