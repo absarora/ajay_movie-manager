@@ -1,9 +1,12 @@
 <h1>All Collections</h1>
-<%= link_to "New Collection", new_collection_path %>
+
+<% if policy(Collection.new).create? %>
+  <%= link_to "New Collection", new_collection_path %>
+<% end %>
 <% @collections.each do |collection| %>
   <p><%= link_to collection.title, collection %></p>
   <small>
-    submitted <%= time_ago_in_words(collection.created_at) %> ago
+    submitted <%= time_ago_in_words(collection.created_at) %> ago by <%= collection.user.name %>
     <%= collection.movies.count %> Movies
   </small>
 <% end %>

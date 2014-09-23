@@ -1,6 +1,7 @@
 class CollectionsController < ApplicationController
   def index
     @collections = Collection.all
+    authorize @collections
   end
 
   def show
@@ -9,10 +10,12 @@ class CollectionsController < ApplicationController
 
   def new
     @collection = Collection.new
+    authorize @collection
   end
 
   def create
-    @collection = Collection.new(collection_params)
+    @collection = current_user.collections.build(collection_params)
+    authorize @collection
     if @collection.save
       flash[:notice] = "Collection was saved."
       redirect_to @collection
@@ -24,10 +27,12 @@ class CollectionsController < ApplicationController
 
   def edit
     @collection = Collection.find(params[:id])
+    authorize @collection
   end
 
   def update
     @collection = Collection.find(params[:id])
+    authorize @collection
     if @collection.update_attributes(collection_params)
       flash[:notice] = "Collection was updated."
       redirect_to @collection
@@ -39,6 +44,7 @@ class CollectionsController < ApplicationController
 
   def destroy
     @collection = Collection.find(params[:id])
+    authorize @collection
     name = @collection.title
     if @collection.destroy
       flash[:notice] = "\"#{name}\" was deleted successfully."

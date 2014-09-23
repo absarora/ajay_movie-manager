@@ -30,6 +30,7 @@ gem 'rails_12factor', group: :production
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'figaro'
+gem 'pundit'
 # Use unicorn as the app server
 # gem 'unicorn'
 
