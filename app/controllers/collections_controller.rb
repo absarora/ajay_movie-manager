@@ -17,7 +17,7 @@ class CollectionsController < ApplicationController
       flash[:notice] = "Collection was saved."
       redirect_to @collection
     else
-      flash[:error] = "There was an error saving the Collection. Please try again."
+      flash[:error] = "Title can not be left blank."
       render :new
     end
   end
