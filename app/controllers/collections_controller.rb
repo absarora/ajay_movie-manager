@@ -37,6 +37,18 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def destroy
+    @collection = Collection.find(params[:id])
+    name = @collection.title
+    if @collection.destroy
+      flash[:notice] = "\"#{name}\" was deleted successfully."
+      redirect_to collections_path
+    else
+      flash[:error] = "There was an error deleting the collection."
+      render :show
+    end
+  end
+
   private
 
   def collection_params

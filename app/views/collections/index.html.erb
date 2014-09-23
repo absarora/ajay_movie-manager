@@ -2,4 +2,8 @@
 <%= link_to "New Collection", new_collection_path %>
 <% @collections.each do |collection| %>
   <p><%= link_to collection.title, collection %></p>
+  <small>
+    submitted <%= time_ago_in_words(collection.created_at) %> ago
+    <%= collection.movies.count %> Movies
+  </small>
 <% end %>
