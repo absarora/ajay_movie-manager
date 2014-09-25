@@ -1,16 +1,26 @@
-<h1><%= @collection.title %></h1>
+<div class="container">
+  <h1><%= @collection.title %></h1>
 
-<% if policy(@collection).edit? %>
-  <p><%= link_to "Edit Collection", edit_collection_path %></p>
-<% end %>
+  <% if policy(@collection).edit? %>
+    <p>
+      <%= link_to edit_collection_path, class: 'btn btn-mini' do %>
+        <i class="glyphicon glyphicon-pencil"></i>
+      <% end %>
+    </p>
+  <% end %>
 
-<% if policy(@collection).destroy? %>
-  <p><%= link_to 'Delete Collection', @collection, method: :delete, data: {confirm: 'Are you sure you want to delete this topic?'} %></p>
-<% end %>
+  <% if policy(@collection).destroy? %>
+    <p>
+      <%= link_to @collection, method: :delete, data: {confirm: 'Are you sure you want to delete this topic?'}, class: 'btn btn-mini' do %>
+        <i class="glyphicon glyphicon-remove"></i>
+      <% end %>
+    </p>
+  <% end %>
 
-<% if current_user %>
-<p><%= link_to 'New Movie', new_collection_movie_path(@collection) %></p>
-<% end %>
-<p><% @collection.movies.each do |movie| %>
-  <%= link_to movie.title, [@collection, movie] %>
-<% end %></p>
+  <% if current_user %>
+  <p><%= link_to 'New Movie', new_collection_movie_path(@collection) %></p>
+  <% end %>
+  <p><% @collection.movies.each do |movie| %>
+    <%= link_to movie.title, [@collection, movie] %>
+  <% end %></p>
+</div>
