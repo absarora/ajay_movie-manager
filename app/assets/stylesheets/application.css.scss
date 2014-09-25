@@ -6,9 +6,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+  font-family: 'Josefin Slab', serif;
+  font-size: 18px;
+}
+
 .user-info{
   margin-top: 9px;
   font-family: 'Josefin Slab', serif;
   font-weight: 600;
   font-size: 18px;
+}
+
+.align-glyphicon{
+  display: inline-block;
 }

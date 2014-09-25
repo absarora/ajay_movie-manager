@@ -1,12 +1,14 @@
-<h1>All Collections</h1>
+<div class="container">
+  <h1>All Collections</h1>
 
-<% if policy(Collection.new).create? %>
-  <%= link_to "New Collection", new_collection_path %>
-<% end %>
-<% @collections.each do |collection| %>
-  <p><%= link_to collection.title, collection %></p>
-  <small>
-    submitted <%= time_ago_in_words(collection.created_at) %> ago by <%= collection.user.name %>
-    <%= collection.movies.count %> Movies
-  </small>
-<% end %>
+  <% if policy(Collection.new).create? %>
+    <p><%= link_to "New Collection", new_collection_path, class: 'btn btn-primary' %></p>
+  <% end %>
+  <% @collections.each do |collection| %>
+    <p><%= link_to collection.title, collection %></p>
+    <small>
+      submitted <%= time_ago_in_words(collection.created_at) %> ago by <%= collection.user.name %>
+      <%= collection.movies.count %> Movies
+    </small>
+  <% end %>
+</div>

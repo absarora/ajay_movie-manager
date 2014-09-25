@@ -1,10 +1,22 @@
-<h1><%= @movie.title %></h1>
-<p>Format: <%= @movie.format %></p>
-<p>Length: <%= format("%2d hr %02d min", @movie.length/60, @movie.length % 60 ) %></p>
-<p>Year: <%= @movie.year %></p>
-<p>Rating: <%= @movie.rating %></p>
+<div class="container">
+  <h1 class="align-glyphicon"><%= @movie.title %></h1>
+  <p class="align-glyphicon">
+    <%= link_to edit_collection_movie_path(@collection, @movie), class: 'btn btn-mini' do %>
+      <i class="glyphicon glyphicon-pencil"></i>
+    <% end %>
+  </p>
+  <p class="align-glyphicon">
+    <%= link_to [@collection, @movie], method: :delete, data: {confirm: 'Are you sure you want to delete this movie?'}, class: 'btn btn-mini' do %>
+        <i class="glyphicon glyphicon-remove"></i>
+      <% end %>
+  </p>
+  <p><b>Format:</b> <%= @movie.format %></p>
+  <p><b>Length:</b> <%= format("%2d hr %02d min", @movie.length/60, @movie.length % 60 ) %></p>
+  <p><b>Year:</b> <%= @movie.year %></p>
+  <p><b>Rating:</b> <%= @movie.rating %></p>
 
 
-<p><%= link_to "Edit Movie", edit_collection_movie_path(@collection, @movie) %></p>
-<p><%= link_to "My Collection", @collection %></p>
-<p><%= link_to "Delete Movie", [@collection, @movie], method: :delete, data: {confirm: 'Are you sure you want to delete this movie?'} %></p>
+  <p class="align-glyphicon">
+    <%= link_to "Back", @collection, class: 'btn btn-primary' %>
+  </p>
+</div>
