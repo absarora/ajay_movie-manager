@@ -9,17 +9,18 @@
 
 body{
   font-family: 'Josefin Slab', serif;
-  font-size: 18px;
+  font-size: 1.50em;
 }
 .container{
   min-height: 500px;
+  font-size: 1.125em;
 }
 
 .user-info{
-  margin-top: 9px;
+  margin-top: 1%;
   font-family: 'Josefin Slab', serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.125em;
 }
 
 .align-glyphicon{
@@ -42,22 +43,23 @@ table.head-margin{
 footer{
   p{
     text-align: center;
-    margin-top: 8px;
+    margin-top: 1%;
     margin-bottom: 0;
     font-family: 'Josefin Slab', serif;
     font-weight: 600;
   }
   p#margin-align{
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 1%;
   }
 }
 .nav{
+  font-size: 1.125em;
   margin: 1.5% 0;
 }
 
 footer{
-  font-size: 12px;
+  font-size: 0.750em;
 }
 
 .splash-page{
