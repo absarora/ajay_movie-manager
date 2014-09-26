@@ -38,7 +38,7 @@
         <tr>
           <td class="movie-title"><%= link_to movie.title, [@collection, movie] %></td>
           <td><%= movie.format %></td>
-          <td><%= "#{movie.length/60} hr " + "#{movie.length % 60} min" %></td>
+          <td><%= format("%2d hr %02d min", movie.length/60, movie.length % 60) %></td>
           <td><%= movie.year %></td>
           <td><%= movie.rating %></td>
         </tr>
