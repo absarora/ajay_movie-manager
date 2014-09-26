@@ -32,6 +32,7 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'figaro'
 gem 'pundit'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 # Use unicorn as the app server
 # gem 'unicorn'
 

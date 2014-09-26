@@ -11,7 +11,7 @@
       <% end %>
   </p>
   <p><b>Format:</b> <%= @movie.format %></p>
-  <p><b>Length:</b> <%= format("%2d hr %02d min", @movie.length/60, @movie.length % 60 ) %></p>
+  <p><b>Length:</b> <%= time_convert %></p>
   <p><b>Year:</b> <%= @movie.year %></p>
   <p><b>Rating:</b> <%= @movie.rating %></p>
 

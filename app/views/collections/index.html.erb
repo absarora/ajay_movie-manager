@@ -5,9 +5,9 @@
     <p><%= link_to "New Collection", new_collection_path, class: 'btn btn-primary' %></p>
   <% end %>
   <% @collections.each do |collection| %>
-    <p><%= link_to collection.title, collection %></p>
+    <p><%= link_to collection.title, collection, data: { no_turbolink: true } %></p>
     <small>
-      submitted <%= time_ago_in_words(collection.created_at) %> ago by <%= collection.user.name %>
+      updated <%= time_ago_in_words(collection.updated_at) %> ago by <%= collection.user.name %>
       <%= collection.movies.count %> Movies
     </small>
   <% end %>

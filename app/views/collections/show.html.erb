@@ -20,7 +20,29 @@
   <% if current_user %>
   <p><%= link_to 'New Movie', new_collection_movie_path(@collection), class: 'btn btn-primary' %></p>
   <% end %>
-  <p><% @collection.movies.each do |movie| %>
-    <%= link_to movie.title, [@collection, movie] %>
-  <% end %></p>
+  </br>
+
+  <table id="product_lists">
+    <thead>
+      <tr>
+        <th class="head-title">Title</th>
+        <th>Format</th>
+        <th>Length</th>
+        <th>Year</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+
+    <tbody>  
+      <% @collection.movies.each do |movie| %>
+        <tr>
+          <td class="movie-title"><%= link_to movie.title, [@collection, movie] %></td>
+          <td><%= movie.format %></td>
+          <td><%= "#{movie.length/60} hr " + "#{movie.length % 60} min" %></td>
+          <td><%= movie.year %></td>
+          <td><%= movie.rating %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

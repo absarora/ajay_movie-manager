@@ -4,5 +4,5 @@ class Collection < ActiveRecord::Base
 
   validates_presence_of :title
 
-  default_scope { order('created_at DESC')}
+  default_scope { order('updated_at DESC')}
 end

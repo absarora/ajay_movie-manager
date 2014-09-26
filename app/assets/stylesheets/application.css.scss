@@ -1,6 +1,7 @@
 /*
  *= require_tree .
  *= require_self
+ *= require dataTables/jquery.dataTables
  */
 
 @import "bootstrap-sprockets";
@@ -20,4 +21,17 @@ body{
 
 .align-glyphicon{
   display: inline-block;
+}
+.table tr td, .table th{
+  width: 15%;
+}
+.table tr td.movie-title{
+  width: 25%;
+}
+.table th.head-title{
+  width: 25%;
+}
+
+table.head-margin{
+  margin-bottom: 0;
 }
