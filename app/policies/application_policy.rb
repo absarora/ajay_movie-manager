@@ -16,6 +16,7 @@ class ApplicationPolicy
 
   def create?
     false
+    user.present?
   end
 
   def new?
@@ -24,6 +25,7 @@ class ApplicationPolicy
 
   def update?
     false
+    user.present? && record.user == user
   end
 
   def edit?

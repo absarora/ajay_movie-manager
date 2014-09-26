@@ -8,14 +8,14 @@ class MoviesController < ApplicationController
   def new
     find_collection
     @movie = Movie.new
-    # authorize @movie
+    authorize @movie
   end
 
   def create
     find_collection
     @movie = @collection.movies.build(movie_params)
     #@movie.collection = @collection
-    # authorize @movie
+    authorize @movie
     if @movie.save
       flash[:notice] = "Movie was saved."
       redirect_to [@collection, @movie]
@@ -28,13 +28,13 @@ class MoviesController < ApplicationController
   def edit
     find_collection
     @movie = Movie.find(params[:id])
-    # authorize @movie
+    authorize @movie
   end
 
   def update
     find_collection
     @movie = Movie.find(params[:id])
-    # authorize @movie
+    authorize @movie
     if @movie.update_attributes(movie_params)
       flash[:notice] = "Movie was updated."
       redirect_to [@collection, @movie]
@@ -47,7 +47,7 @@ class MoviesController < ApplicationController
   def destroy
     find_collection
     @movie = Movie.find(params[:id])
-    # authorize @movie
+    authorize @movie
     name = @movie.title
     if @movie.destroy
       flash[:notice] = "\"#{name}\" was deleted successfully."
